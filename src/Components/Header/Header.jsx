@@ -1,6 +1,6 @@
 import React from 'react';
 import LowerHeader from './LowerHeader';
-import amazonLogo from '../../assets/images/amazon-logo.png';
+import amazonLogo from "../../assets/logo-icons/amazon-logo.png";
 import { FaSearch } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { BiCart } from "react-icons/bi";
@@ -47,9 +47,9 @@ const Header = () => {
                 src="https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_the_United_States.png"
                 alt=""
               />
+                  <IoIosArrowDown />
               <select name="" id="">
                 <option value="">
-                  <IoIosArrowDown />
                   En
                 </option>
               </select>

@@ -1,0 +1,14 @@
+.carousel_container{
+    position: relative;
+    
+}.carousel_bottom_fade::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20vw;
+    bottom: 0px;
+    background-image: linear-gradient(
+         to bottom, rgba(255, 255, 255, 0),rgb(255, 255, 255)
+    );
+
+}
