@@ -4,3 +4,11 @@
     box-sizing: border-box;
     
 }
+img{
+    width: 100%;
+}
+:root{
+    --primary-color:#febd69;
+    --secondary-color:#d49644;
+    
+}
