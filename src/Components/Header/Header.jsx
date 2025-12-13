@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LowerHeader from './LowerHeader';
 import amazonLogo from "../../assets/logo-icons/amazon-logo.png";
 import { FaSearch } from "react-icons/fa";
@@ -15,9 +16,9 @@ const Header = () => {
             <div className={classes.header_left_container}>
               {/* logo */}
 
-              <a className={classes.logo} href="">
+              <Link className={classes.logo} to="/">
                 <img src={amazonLogo} alt="Amazon Logo" />
-              </a>
+              </Link>
 
               {/* delivery info */}
               <div className={classes.delivery}>
@@ -47,26 +48,26 @@ const Header = () => {
                 src="https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_the_United_States.png"
                 alt=""
               />
-                  <IoIosArrowDown />
+              <IoIosArrowDown />
               <select name="" id="">
-                <option value="">
-                  En
-                </option>
+                <option value="">En</option>
               </select>
             </div>
-            <a href="">
+            <Link to="/auth">
               <p>sign in</p>
               <span>Account & Lists</span>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/orders">
               <p>Returns </p>
               <span>& Orders</span>
-            </a>
-            <div className={classes.cart}>
-              <BiCart size={30} />
+            </Link>
+            <Link to='/cart'>
+              <div className={classes.cart}>
+                <BiCart size={30} />
 
-              <span>0</span>
-            </div>
+                <span>0</span>
+              </div>
+            </Link>
           </div>
         </header>
         <LowerHeader />
