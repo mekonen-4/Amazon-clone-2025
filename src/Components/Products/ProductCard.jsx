@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Rating} from '@mui/material'
 import {formatCurrency} from '../CurrencyFormat/CurrencyFormat'
 import classes from "./Product.module.css";
+import { Link } from 'react-router-dom';
 const ProductCard = ({product}) => {
     const [isHovered,setHovered]=useState(false)
 
@@ -11,9 +12,9 @@ const ProductCard = ({product}) => {
         onMouseLeave={() => setHovered(false)}
         className={classes.product_container}
       >
-        <a href="#">
+        <Link to={`/products/${product.id}`}>
           <img  src={product.image} alt={product.category} />
-        </a>
+        </Link>
         <div className={classes.product_description}>
           <p className={classes.product_title }>{product.title}</p>
           <div>

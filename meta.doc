@@ -7,9 +7,12 @@ install material icon from npm for rating
 install numeraljs from npm for formatting and manipulating numbers
 make the components needed and structure them 
 use dynamic routing  to make functional categoty links(useparams)
+use dynamic routing  to make functional single product links(useparams)
 
 
 
 
 
 how do we see errors in real after production?
+understanding api documentation is hard and can we just search on google or Ai was that enough and can they give us full information about that specific api?
+should we delete our comments after finishing i mean the console . log

@@ -23,7 +23,7 @@ const Category = () => {
           return (
             <Link
               key={index}
-              to={`/products/${category.name}`}
+              to={`/products/category/${category.name}`}
             >
               <h3>{category.title}</h3>
               <span>
