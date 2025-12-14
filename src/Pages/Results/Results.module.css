@@ -1,0 +1,21 @@
+.category_product_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 40px;
+    max-width: 1450px;
+    padding: 0 10px;
+    margin: 60px auto;
+}
+@media(max-width: 570px) {
+    .product_upper_container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        margin: 40px auto;
+    }
+}
+@media(max-width: 470px) {
+    .product_upper_container {
+        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+        gap: 15px;
+    }
+}

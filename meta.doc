@@ -5,3 +5,5 @@ install react reponsive carousel fron npm
 fake store api
 install material icon from npm for rating 
 install numeraljs from npm for formatting and manipulating numbers
+make the components needed and structure them 
+use dynamic routing  to make functional categoty links(useparams)

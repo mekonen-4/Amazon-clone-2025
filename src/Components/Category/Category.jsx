@@ -1,5 +1,6 @@
 import React, {  } from 'react';
 // import axios from 'axios'
+import {Link} from 'react-router-dom'
 import {categoryList} from "./categoryList"
 import categoryCss from './Category.module.css'
 const Category = () => {
@@ -18,14 +19,18 @@ const Category = () => {
     return (
       <div className={categoryCss.category_container}>
         {categoryList?.map((category, index) => {
+          // console.log(category);
           return (
-            <a key={index} href="#">
+            <Link
+              key={index}
+              to={`/products/${category.name}`}
+            >
               <h3>{category.title}</h3>
               <span>
                 <img src={category.imgUrl} alt="" />
               </span>
               <p>Shop now</p>
-            </a>
+            </Link>
           );
         })}
       </div>
