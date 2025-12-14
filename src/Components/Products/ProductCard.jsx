@@ -12,17 +12,17 @@ const ProductCard = ({product}) => {
         onMouseLeave={() => setHovered(false)}
         className={classes.product_container}
       >
-        <Link to={`/products/${product.id}`}>
-          <img  src={product.image} alt={product.category} />
+        <Link to={`/products/${product?.id}`}>
+          <img  src={product?.image} alt={product?.category} />
         </Link>
         <div className={classes.product_description}>
-          <p className={classes.product_title }>{product.title}</p>
+          <p className={classes.product_title }>{product?.title}</p>
           <div>
-            <Rating className={classes.product_rating} value={product.rating.rate} precision={0.5} />
-            <p>{product.rating.count}</p>
+            <Rating className={classes.product_rating} value={product?.rating.rate} precision={0.5} />
+            <p>{product?.rating.count}</p>
           </div>
           <p className={classes.product_price}>
-            {formatCurrency(product.price)}{" "}
+            {formatCurrency(product?.price)}{" "}
           </p>
         </div>
         <button
