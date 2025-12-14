@@ -3,6 +3,7 @@ import Layout from '../../Components/Layout/Layout';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../../Components/Products/ProductCard';
+import { endPoint } from '../../Components/Api/endPoints';
 import classes from './Results.module.css'
 
 const Results = () => {
@@ -12,7 +13,7 @@ const Results = () => {
     useEffect(()=>{
         const fetchCategory= async ()=>{
             try {
-                const response = await axios.get(`https://fakestoreapi.com/products/category/${categoryName}`);
+                const response = await axios.get(`${endPoint}/products/category/${categoryName}`);
                  setCategoryProducts(response.data)
                 // console.log(response);
                 
