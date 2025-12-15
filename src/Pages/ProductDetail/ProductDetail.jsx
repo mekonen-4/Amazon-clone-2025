@@ -36,7 +36,10 @@ const ProductDetail = () => {
               <Loading />
             ) : (
               <div className={classes.single_product_container}>
-                <ProductCard product={singleProduct} />
+                <ProductCard product={singleProduct} flex={true}
+                detailDescription={true}
+                
+                />
               </div>
             )}{" "}
           </Layout>
