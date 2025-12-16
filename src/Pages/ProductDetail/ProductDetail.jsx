@@ -18,7 +18,7 @@ const ProductDetail = () => {
             try {
                 
                 const response = await axios.get(`${endPoint}/products/${productId}`)
-                // console.log(response);
+                console.log(response);
                 setIsLoading(false)
                 setSingleProduct(response.data);
             } catch (error) {
@@ -28,7 +28,7 @@ const ProductDetail = () => {
         }
         fetchSingleProduct()
     },[])
-    // console.log(singleProduct);
+    console.log(singleProduct);
   
         return (
           <Layout>
