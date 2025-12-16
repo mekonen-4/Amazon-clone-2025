@@ -10,8 +10,9 @@ const Cart = () => {
   // console.log(state.cart[0].product);
 //   let totalAmount = 0;
   let totalAmount = state.cart.reduce((sum,item)=>{
-      return item.product.price +sum
+      return item.product.price * item.amount + sum;
   },0)
+  console.log(state.cart);
   return (
     <Layout>
       <section className={classes.cart_container}>
@@ -25,7 +26,7 @@ const Cart = () => {
           ) : (
             state.cart.map((singleProduct, index) => {
               console.log(singleProduct);
-              totalAmount += singleProduct.product.price;
+              // totalAmount += singleProduct.product.price;
               return (
                 <ProductCard
                   key={index}
@@ -39,7 +40,7 @@ const Cart = () => {
           )}
         </div>
         <div className={classes.cart_payment_summary}>
-          {state.cart !== 0 && (
+          { (
             <>
               <p className={classes.cart_total_money}>
                 Subtotal( {state.cart.length} items):{" "}
