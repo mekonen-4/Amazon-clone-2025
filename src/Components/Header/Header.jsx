@@ -14,7 +14,7 @@ const [state]=useContext(DataContext);
 // console.log(state);
 
     return (
-      <>
+      <div className={`${classes.both_header_container}`}>
         <header className={classes.header_container}>
           <section className={classes.header_main_section}>
             <div className={classes.header_left_container}>
@@ -75,7 +75,7 @@ const [state]=useContext(DataContext);
           </div>
         </header>
         <LowerHeader />
-      </>
+      </div>
     );
 }
 

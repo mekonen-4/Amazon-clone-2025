@@ -1,7 +1,23 @@
-
+/* =======================
+   LOGO
+======================= */
 .logo img {
     max-width: 200px;
 }
+
+/* =======================
+   STICKY HEADER
+======================= */
+.both_header_container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1a1a1a;
+}
+
+/* =======================
+   HEADER BASE
+======================= */
 .header_container {
     display: flex;
     align-items: center;
@@ -12,37 +28,45 @@
     height: 70px;
     gap: 10px;
     width: 100%;
-    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-.header_main_section{
+
+/* =======================
+   MAIN SECTION
+======================= */
+.header_main_section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
+
+/* =======================
+   LEFT SECTION
+======================= */
 .header_left_container {
     display: flex;
     align-items: center;
-    /* gap: 10px; */
 }
+
 .logo {
     max-width: 200px;
     min-width: 100px;
     height: auto;
     display: flex;
     align-items: center;
-    
-    /* justify-content: center; */
     margin-left: 5px;
-    
 }
+
 .logo img {
     width: 80%;
-    /* object-fit: contain; */
-    /* margin-left: 20px; */
     vertical-align: middle;
     padding-top: 10px;
 }
+
+/* =======================
+   DELIVERY
+======================= */
 .delivery {
     display: flex;
     align-items: center;
@@ -51,29 +75,35 @@
     white-space: nowrap;
     padding: 5px;
 }
+
 .delivery div p {
     font-size: 10px;
 }
+
+/* =======================
+   SEARCH BAR
+======================= */
 .header_middle_container {
-  
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     width: 100%;
-    /* overflow: hidden; */
 }
-.header_middle_container input{
+
+.header_middle_container input {
     flex: 1;
     border: none;
-    padding: 10.5px 10px;
+    padding: 10.4px 10px;
     max-width: 800px;
 }
+
 .header_middle_container input,
-.header_middle_container select{
+.header_middle_container select {
     font-weight: bold;
     outline: 1px solid #ffffff;
 }
+
 .header_middle_container select {
     padding: 10px;
     border: none;
@@ -82,18 +112,26 @@
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
 .search_icon {
     background-color: #febd69;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
-}.search_icon:hover {
+}
+
+.search_icon:hover {
     background-color: #f3a847;
 }
+
 .header_middle_container:focus-within {
-   border:2px solid #febd69;
+    border: 2px solid #febd69;
 }
+
+/* =======================
+   RIGHT SECTION
+======================= */
 .header_right_container {
     display: flex;
     align-items: center;
@@ -108,31 +146,40 @@
     font-size: 14px;
     white-space: nowrap;
 }
-.header_right_container p{
+
+.header_right_container p {
     font-size: 10px;
 }
+
+/* =======================
+   LANGUAGE
+======================= */
 .language_selection {
     display: flex;
     align-items: center;
-    /* gap: 5px; */
     padding: 10px;
     width: 100px;
 }
-.language_selection select{
+
+.language_selection select {
     background-color: #1a1a1a;
     border: none;
     color: white;
 }
-.language_selection img{
+
+.language_selection img {
     width: 40%;
-    
 }
+
+/* =======================
+   CART
+======================= */
 .cart {
     display: flex;
     align-items: center;
-    /* gap: 5px; */
     position: relative;
 }
+
 .cart span {
     position: absolute;
     top: -10px;
@@ -144,6 +191,10 @@
     font-weight: bold;
     font-size: 12px;
 }
+
+/* =======================
+   HOVER EFFECTS (DESKTOP)
+======================= */
 .cart:hover,
 .language_selection:hover,
 .delivery:hover,
@@ -152,52 +203,108 @@
     border: 1px solid white;
     border-radius: 3px;
 }
-@media screen and (max-width:1024px) {
+
+/* =======================
+   TABLET
+======================= */
+@media screen and (max-width: 1024px) {
     .header_container {
-            flex-direction: column;
-            height: auto;
-            gap: 15px;
-        }
-            .header_middle_container input {
-                width: 100%;
-                max-width: 400px;
-            }
-}
-@media screen and (max-width:822px) {
-    .logo img {
-            max-width: 180px;
-        }
-    .header_container{
+        flex-direction: column;
         height: auto;
-        /* align-items: ; */
-        padding-top: 12px;
-       
+        gap: 15px;
     }
-    .header_main_section {
-            flex-direction: column;
-            gap: 10px;
-        }
-        .header_right_container{
-            gap: 13%;
-        }
+
+    .header_middle_container input {
+        width: 100%;
+        max-width: 400px;
+    }
 }
+
+/* =======================
+   AMAZON-STYLE MOBILE
+======================= */
+@media screen and (max-width: 768px) {
+
+    .header_container {
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    /* Top row: logo + cart */
+    .header_main_section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Search goes second row */
+    .header_middle_container {
+        order: 2;
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .header_middle_container input {
+        max-width: 100%;
+    }
+
+    /* Mobile logo */
+    .logo img {
+        max-width: 120px;
+        padding-top: 0;
+    }
+
+    /* Hide clutter */
+    .delivery{
+        display: none;
+    }
+
+    /* Hide text links, keep cart */
+    /* .header_right_container a:not(:last-child) {
+        display: none;
+    } */
+
+    .header_right_container {
+        margin-right: 0;
+    }
+
+    /* Cart badge refinement */
+    .cart span {
+        top: -5px;
+        right: -5px;
+        font-size: 11px;
+        min-width: 18px;
+        text-align: center;
+    }
+}
+
+/* =======================
+   SMALL MOBILE
+======================= */
 @media screen and (max-width: 652px) {
-    .header_container {
-        flex-direction: column;
-        height: auto;
-        gap: 15px;
-    }
-
-    .header_main_section {
-        flex-direction: column;
-        gap: 15px;
-    }
-
     .logo img {
-        max-width: 140px;
+        max-width: 110px;
     }
-        .header_right_container {
-            gap: 3%;
-        }
+}
 
+/* =======================
+   TOUCH DEVICES FIX
+======================= */
+@media (hover: none) {
+
+    .cart:hover,
+    .language_selection:hover,
+    .delivery:hover,
+    .header_container a:hover {
+        outline: none;
+        border: none;
+    }
+}
+@media (max-width:320px) {
+    .header_right_container{
+        gap:2px
+    }
 }

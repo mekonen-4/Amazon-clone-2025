@@ -15,24 +15,29 @@
     font-size: 14px;
     cursor: pointer;
     padding: 2px 8px;
-    position: relative;
+    /* position: relative; */
+}
+.lowerHeader_container li:hover {
+    outline: 1px solid white;
+    border: 1px solid white;
+    border-radius: 3px;
 }
 
-.lowerHeader_container li::after {
+/* .lowerHeader_container li::after {
     content: "";
     position: absolute;
     left: 0;
+    background-color: #ffa41c;
     bottom: -6px;
     height: 2px;
     width: 0;
-    background-color: #ffa41c;
     /* Amazon orange */
-    transition: 0.25s ease;
-}
+    /* transition: 0.25s ease; */
+/* } */
 
-.lowerHeader_container li:hover::after {
+/*.lowerHeader_container li:hover::after {
     width: 100%;
-}
+} */
 
 .menu_items {
     display: flex;
