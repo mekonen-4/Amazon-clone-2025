@@ -33,10 +33,13 @@ const Results = () => {
     // console.log(categoryProducts);
     return (
       <>
+        <Layout>
+       
+          <p style={{padding:'15px 0 0 10px',fontWeight:'bold', fontSize:'18px'}}>Category / {categoryName}</p>
+       
         {isLoading ? (
           <Loading />
         ) : (
-          <Layout>
             <div className={classes.category_product_container}>
               {categoryProducts?.map((categoryProduct) => {
                 // console.log(categoryProduct);
@@ -47,8 +50,8 @@ const Results = () => {
                 );
               })}
             </div>
-          </Layout>
         )}
+        </Layout>
       </>
     );
 }

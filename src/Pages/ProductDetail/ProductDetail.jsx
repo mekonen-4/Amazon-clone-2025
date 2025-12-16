@@ -32,6 +32,7 @@ const ProductDetail = () => {
   
         return (
           <Layout>
+    
             {isLoading ? (
               <Loading />
             ) : (

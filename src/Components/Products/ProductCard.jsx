@@ -5,7 +5,7 @@ import classes from "./Product.module.css";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
-const ProductCard = ({ product, flex, detailDescription }) => {
+const ProductCard = ({ product, flex, detailDescription,removeAddToCart }) => {
   const [isHovered, setHovered] = useState(false);
   // console.log(product);
   const [, dispatch] = useContext(DataContext);
@@ -47,14 +47,18 @@ const ProductCard = ({ product, flex, detailDescription }) => {
         <p className={classes.product_price}>
           {formatCurrency(product?.price)}{" "}
         </p>
-        <button
-          className={`${
-            isHovered && !flex ? classes.add_to_cart_button : classes.off_button
-          } ${flex && classes.detail_page_add_to_cart}`}
-          onClick={addToCart}
-        >
-          Add to Cart
-        </button>
+        {!removeAddToCart && (
+          <button
+            className={`${
+              isHovered && !flex
+                ? classes.add_to_cart_button
+                : classes.off_button
+            } ${flex && classes.detail_page_add_to_cart}`}
+            onClick={addToCart}
+          >
+            Add to Cart
+          </button>
+        )}
       </div>
     </div>
   );
