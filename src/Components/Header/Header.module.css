@@ -150,7 +150,9 @@
 .header_right_container p {
     font-size: 10px;
 }
-
+.sign_out:hover{
+    color: red;
+}
 /* =======================
    LANGUAGE
 ======================= */

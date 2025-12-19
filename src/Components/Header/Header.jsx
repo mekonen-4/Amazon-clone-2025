@@ -9,13 +9,15 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import classes from './Header.module.css';
 import { DataContext } from '../DataProvider/DataProvider';
+import { auth } from '../../Utility/fireBase';
+
 const Header = () => {
 const [state]=useContext(DataContext);
 // console.log(state);
   const totalItem =state.cart?.reduce((amount,item)=>{
     return item.amount + amount;
   },0)
-
+  // console.log(state);
   
     return (
       <div className={`${classes.both_header_container}`}>
@@ -61,15 +63,27 @@ const [state]=useContext(DataContext);
                 <option value="">En</option>
               </select>
             </div>
-            <Link to="/auth">
-              <p>sign in</p>
-              <span>Account & Lists</span>
+            <Link to={!state.user && '/auth'}>
+              {state?.user ? (
+                <>
+                  <p>Hello,{state.user.email.split('@')[0]}</p>
+                  <span onClick={()=>auth.signOut()}
+                  className={classes.sign_out}
+                  >Sign Out</span>
+                </>
+              ) : (
+                <>
+                  <p>Hello, Sign In</p>
+                
+                  <span>Account & Lists</span>
+                </>
+              )}
             </Link>
             <Link to="/orders">
               <p>Returns </p>
               <span>& Orders</span>
             </Link>
-            <Link to='/cart'>
+            <Link to="/cart">
               <div className={classes.cart}>
                 <BiCart size={30} />
 

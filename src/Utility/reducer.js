@@ -1,7 +1,8 @@
 import { Type } from "./action.type";
 
 export const initialState = {
-  cart: []
+  cart: [],
+  user:null
 };
 
 export const reducer = (state, action) => {
@@ -57,6 +58,11 @@ export const reducer = (state, action) => {
     ...state,
     cart: state.cart.filter(item => item.product.id !== action.id),
   };
+  case Type.SET_USER:
+    return{
+      ...state,
+      user:action.user
+    }
 
     default:
       return state;
