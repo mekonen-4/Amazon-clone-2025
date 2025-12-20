@@ -1,0 +1,130 @@
+/* Header */
+.payment_header {
+    background-color: #f3f3f3;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Main Container */
+.payment {
+    background-color: white;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Flex Sections */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.flex h3 {
+    min-width: 260px;
+    font-weight: 600;
+}
+
+/* Product image fix */
+.flex img {
+    width: 100px !important;
+}
+
+/* Divider */
+.payment hr {
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Address */
+.address {
+    line-height: 1.6;
+}
+
+/* Items */
+.items {
+    width: 100%;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+/* Payment */
+.payment_method {
+    width: 100%;
+    max-width: 420px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order_total {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Button */
+.pay_button {
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.pay_button:hover {
+    background-color: #ddb347;
+}
+
+/* Error */
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ========================= */
+
+@media (max-width: 900px) {
+    .payment {
+        padding: 15px;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex h3 {
+        min-width: unset;
+        font-size: 18px;
+    }
+
+    .payment_method {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .payment_header {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .order_total {
+        font-size: 16px;
+    }
+
+    .pay_button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

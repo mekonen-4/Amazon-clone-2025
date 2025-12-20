@@ -10,8 +10,11 @@ use dynamic routing  to make functional categoty links(useparams)
 use dynamic routing  to make functional single product links(useparams)
 install react spinner to make loader
 insta;ll firebase
-
-
+create account in stripe for money
+install firebase tools globally
+install mandatory backend packages express cors stripe dotenv
+react stripe
+install react stripe npm
 
 
 
