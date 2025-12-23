@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import classes from "./Auth.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../Utility/fireBase";
 import {
   signInWithEmailAndPassword,
@@ -18,6 +18,8 @@ const Auth = () => {
   const [{ user }, dispatch] = useContext(DataContext);
   // console.log(email,  password);
   console.log(user);
+  const navStateData = useLocation()
+  console.log(navStateData);
   const handleClick = (e) => {
     e.preventDefault();
     // console.log(e.target.name);
@@ -35,7 +37,7 @@ const Auth = () => {
           });
           setLoading({ ...loading, signIn: false });
 
-          navigate("/", { replace: true });
+          navigate( navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           // console.log(err.message);
@@ -74,6 +76,7 @@ const Auth = () => {
       </Link>
       <div>
         <p> Sign-in</p>
+        {navStateData?.state?.msg && <small style={{padding:'5px 15px',textAlign:'center',color:'red',fontWeight:'bold'}} >{navStateData?.state?.msg}</small>}
         <form>
           <label htmlFor="email">E-mail</label>
           <input
@@ -94,7 +97,6 @@ const Auth = () => {
               setError("");
             }}
             className={`${error ? classes.error_border : ""}`}
-          
             type="password"
             id="password"
           />

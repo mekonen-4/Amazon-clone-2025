@@ -89,6 +89,13 @@
     color: red;
     font-size: 12px;
 }
+.payment_loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+}
 
 /* ========================= */
 /* 📱 RESPONSIVE DESIGN */
