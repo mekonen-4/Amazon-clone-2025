@@ -11,6 +11,7 @@ import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/fireBase";
 import { doc, setDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { Type } from "../../Utility/action.type";
 
 const Payment = () => {
   const [{ cart, user }, dispatch] = useContext(DataContext);
@@ -84,7 +85,7 @@ const Payment = () => {
       navigate('/orders',{state:{msg:'you have placed new order'}});
       // 4. Clear cart
       // dispatch({ type: "CLEAR_CART" });
-
+      dispatch({type:Type.EMPTY_CART})
       setSuccessMessage("Payment successful! Thank you for your order.");
     } catch (err) {
       console.error(err);

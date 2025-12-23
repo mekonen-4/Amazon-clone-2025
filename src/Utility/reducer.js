@@ -58,11 +58,17 @@ export const reducer = (state, action) => {
     ...state,
     cart: state.cart.filter(item => item.product.id !== action.id),
   };
+    case Type.EMPTY_CART:
+    return{
+      ...state,
+      cart: []
+    }
   case Type.SET_USER:
     return{
       ...state,
       user:action.user
     }
+
 
     default:
       return state;
