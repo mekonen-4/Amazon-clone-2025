@@ -18,13 +18,18 @@ const Payment = () => {
   const [cardError, setCardError] = useState("");
   const [processing, setProcessing] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [cardComplete, setCardComplete] = useState(false);
+
   
   const stripe = useStripe();
   const elements = useElements();
 
   const handleChange = (e) => {
     setCardError(e?.error ? e.error.message : "");
+    setCardComplete(e.complete);
   };
+    // setProcessing(false);
+
   const navigate = useNavigate()
   const totalItem = cart?.reduce((sum, item) => sum + item.amount, 0);
   const totalAmount = Math.round(
@@ -40,6 +45,10 @@ const Payment = () => {
     if (!stripe || !elements) {
       setCardError("Stripe has not loaded yet.");
       setProcessing(false);
+      return;
+    }
+    if (!cardComplete) {
+      setCardError("Please enter complete card details.");
       return;
     }
 
@@ -146,7 +155,7 @@ const Payment = () => {
               <button
                 type="submit"
                 className={classes.pay_button}
-                disabled={processing}
+                disabled={processing || !cardComplete}
               >
                 {processing ? (
                   <div className={classes.payment_loading}>
